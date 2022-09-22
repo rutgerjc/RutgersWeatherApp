@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Rutgers Weather App</string>
+    <string name="percent_sign"> %</string>
 </resources>
