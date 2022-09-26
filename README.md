@@ -6,8 +6,8 @@ Hello, my name is Rutger
 This repository/project is named RutgersWeatherApp!
 It is a demo weather app I created to help build and hone my android app developer skills.
 
-This app takes user input of any city they would like to see. It outputs
-standard and current weather details, based on the user's input.
+This app takes user-input of any city the user would like to see. It outputs
+standard and current weather details, based on the user's input and current weather data.
 
 ![Image 9-26-22 at 11 01 AM](https://user-images.githubusercontent.com/82121875/192312919-73f0de08-4a9f-4cf1-b261-5a03d2299054.jpg) ![Image 9-26-22 at 11 08 AM resized](https://user-images.githubusercontent.com/82121875/192314659-3b3eabb0-e193-4746-88e4-7c84387340dc.jpeg)
 
