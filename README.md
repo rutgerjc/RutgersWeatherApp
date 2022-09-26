@@ -1,7 +1,6 @@
 # RutgersWeatherApp
-Demo app
 
-Hello, my name is Rutger
+### Hello, my name is Rutger!
 
 This repository/project is named RutgersWeatherApp!
 It is a demo weather app I created to help build and hone my android app developer skills.
