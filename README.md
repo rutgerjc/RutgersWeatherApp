@@ -5,7 +5,7 @@
 This repository/project is named RutgersWeatherApp!
 It is a demo weather app I created to help build and hone my android app developer skills.
 
-I chose to take on this project because I believe it helped me build my ability to work with APIs
+I chose to take on this project because I believe it helped me build my ability to work with APIs and app UI.
 
 This app takes user-input of any city the user would like to see. It outputs
 standard and current weather details, based on the user's input and current weather data.
