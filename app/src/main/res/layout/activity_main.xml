@@ -32,7 +32,8 @@
             android:clickable="true"
             app:layout_constraintStart_toEndOf="@+id/ETCityName"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="#37444d" />
+            app:tint="#37444d"
+            android:focusable="true" />
 
         <TextView
             android:id="@+id/TVLocation"
@@ -42,7 +43,8 @@
             android:text="Location"
             android:textAlignment="center"
             android:textColor="#37444d"
-            android:textSize="27dp"
+            android:textSize="27sp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +57,8 @@
             android:text="Date"
             android:textAlignment="center"
             android:textColor="#37444d"
-            android:textSize="20dp"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -109,6 +112,7 @@
             android:textColor="#37444d"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toStartOf="@+id/TTVMaxTemp"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
