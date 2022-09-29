@@ -3,7 +3,6 @@ package com.example.rutgersweatherapp
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Looper
 import android.view.KeyEvent.KEYCODE_ENTER
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -16,7 +15,6 @@ import com.example.rutgersweatherapp.api.RetrofitInstance
 import com.example.rutgersweatherapp.api.WeatherApi
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.*
-import java.io.IOException
 
 
 class MainActivity : AppCompatActivity() {
