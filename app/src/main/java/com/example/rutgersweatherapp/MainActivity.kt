@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                 closeKeyBoard(searchIV)
             }
         }
-        cityNameET.setOnEditorActionListener { v, actionId, event ->
+        cityNameET.setOnEditorActionListener { _, actionId, event ->
             cityName = cityNameET.text.toString()
             if (actionId == EditorInfo.IME_ACTION_DONE || event.keyCode == KEYCODE_ENTER && cityName.isNotEmpty()) {
                 getWeather(cityName)
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SetTextI18n")
-    @OptIn(DelicateCoroutinesApi::class)
+    //@OptIn(DelicateCoroutinesApi::class)
     private fun getWeather(cityName: String){
             val getWeatherInfo = RetrofitInstance.getWeather(cityName).create(WeatherApi::class.java)
             GlobalScope.launch {

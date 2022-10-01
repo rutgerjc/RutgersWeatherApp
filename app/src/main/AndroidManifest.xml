@@ -17,7 +17,7 @@
         android:roundIcon="@drawable/main_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.RutgersWeatherApp"
-        tools:targetApi="31">
+        tools:targetApi="33">
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
