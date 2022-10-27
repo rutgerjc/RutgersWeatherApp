@@ -11,8 +11,10 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.example.rutgersweatherapp.BuildConfig.WEATHER_API_KEY
 import com.example.rutgersweatherapp.api.RetrofitInstance
 import com.example.rutgersweatherapp.api.WeatherApi
+import com.squareup.picasso.BuildConfig
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.*
 
@@ -87,14 +89,13 @@ class MainActivity : AppCompatActivity() {
             GlobalScope.launch {
 
                 val result =
-                    getWeatherInfo.getForecastWeather(BuildConfig.WEATHER_API_KEY, cityName, 7)
+                    getWeatherInfo.getForecastWeather(com.example.rutgersweatherapp.BuildConfig.WEATHER_API_KEY, cityName, 7)
                 if (result.isSuccessful) {
                     val data = result.body()!!
                     withContext(Dispatchers.Main) {
                         locationTV.text = data.location.name
                         dateTV.text = data.location.localtime
-                        Picasso.get().load("http:" + data.current.condition.icon)
-                            .into(currentWeatherIV)
+                        Picasso.get().load("http:" + data.current.condition.icon).into(currentWeatherIV)
                         currentTempTV.text = data.current.temp_f.toString() + "° F"
                         maxTempTV.text =
                             data.forecast.forecastday[0].day.maxtemp_f.toString() + "° F"
