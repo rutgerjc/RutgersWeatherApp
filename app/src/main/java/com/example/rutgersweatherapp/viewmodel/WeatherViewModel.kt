@@ -3,23 +3,26 @@ package com.example.rutgersweatherapp.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.rutgersweatherapp.BuildConfig
-import com.example.rutgersweatherapp.api.WeatherApi
+import com.example.rutgersweatherapp.repo.WeatherRepository
 import com.example.rutgersweatherapp.data.CurrentWeatherResponse
-import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import javax.inject.Inject
+import kotlinx.coroutines.withContext
 
-@HiltViewModel
-class WeatherViewModel @Inject constructor(private val weatherApi: WeatherApi) : ViewModel() {
+class WeatherViewModel (private val repository: WeatherRepository) : ViewModel() {
 
-    private val _responseLiveData = MutableLiveData<CurrentWeatherResponse>()
-    val responseLiveData = _responseLiveData
+    val weather: MutableLiveData<CurrentWeatherResponse> = MutableLiveData()
 
-    suspend fun weatherCall(cityName: String, days: Int) {
-        viewModelScope.launch {
-            val response = weatherApi.getForecastWeather(BuildConfig.WEATHER_API_KEY, cityName, days)
-            _responseLiveData.value = response.body()!!
+    fun weatherCall(key: String, query: String, days: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = repository.getCurrentWeather(key,query,days)
+            withContext(Dispatchers.Main){
+                if (response.isSuccessful){
+                    weather.value = response.body()
+                } else {
+                    throw IllegalArgumentException("Error")
+                }
+            }
         }
     }
 }
