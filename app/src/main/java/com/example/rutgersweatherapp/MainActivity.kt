@@ -12,7 +12,6 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.example.rutgersweatherapp.BuildConfig.WEATHER_API_KEY
 import com.example.rutgersweatherapp.api.RetrofitInstance
 import com.example.rutgersweatherapp.api.WeatherApi
 import com.example.rutgersweatherapp.data.CurrentWeatherResponse
